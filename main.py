@@ -22,6 +22,7 @@ def generate_pa_results_for_pattern(pattern_info: PatternInfo)-> list[PaResult]:
     with tempfile.TemporaryDirectory("pa_videos") as dir:
         video_files = record_pattern(pattern_info, 4, dir)
 
+
         for video_file in video_files:
             results.append(
                 pa_score_from_video_file(video_file)

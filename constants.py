@@ -1,18 +1,18 @@
 # Connection details for communicating with the printer's moonraker API.
-HOST = '192.168.1.114'
+HOST = '192.168.1.98'
 WS_PORT = 7125
 
 # This will print a calibrated + control pattern and measure the % improvement after tuning
-VALIDATE_RESULTS = True
+VALIDATE_RESULTS = False
 
 # Print settings
-BUILD_PLATE_TEMPERATURE = 110
-HOTEND_TEMPERATURE = 255
+BUILD_PLATE_TEMPERATURE = 35
+HOTEND_TEMPERATURE = 215
 HOTEND_IDLE_TEMP = 200
 
 # This is where the toolhead moves to indicate that it's done printing the PA pattern.
-FINISHED_X = 30
-FINISHED_Y = 250
+FINISHED_X = 220
+FINISHED_Y = 220
 
 # Any gcode you want to be sent before the pattern is printed.
 # You could just have this call PRINT_START if you've configured
@@ -30,9 +30,9 @@ CLEAN_NOZZLE
 """
 
 # Information about the USB camera mounted to the hotend.
-VIDEO_DEVICE = "/dev/video2"
-VIDEO_RESOLUTION = "1280x720"
-FRAMERATE = "30"
+VIDEO_DEVICE = "/base/soc/i2c0mux/i2c@1/ov5647@36"
+VIDEO_RESOLUTION =  "640x480"   # "1280x720" <- original resolution
+FRAMERATE = "15"    # "30" <- original resolution
 # The camera's distance from the nozzle.
 # This tells the recording code how to center the line within the camera's field of view.
 # The offsets are in mm.
